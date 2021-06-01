@@ -8,11 +8,11 @@ contract ekaCoin is ERC20 {
     // EKA coin token decimal
     uint8 public constant _decimals = 18;
     // Total supply for the EKA coin = 7.9B
-    uint256 private _totalSupply = 7900000000;
+    uint256 private _totalSupply = 7900000000 * (10 ** uint256(_decimals));
     // Eka Token deployer
     address private _ekaDeployer;
 
-    constructor(address _deployer) ERC20("EkaCoin", "EKS", _decimals) {
+    constructor(address _deployer) ERC20("EkaCoin", "EKA", _decimals) {
         _ekaDeployer = _deployer;
         _mint(_ekaDeployer, _totalSupply);
     }
